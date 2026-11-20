@@ -1,0 +1,112 @@
+{
+  "dormancy_window_days": 90,
+  "horizons_days": [
+    30,
+    60,
+    90
+  ],
+  "lookback_days": 90,
+  "features": [
+    "quiet_days",
+    "tenure_days",
+    "activity_rate_lifetime",
+    "is_new_client",
+    "active_days_7",
+    "active_days_30",
+    "active_days_90",
+    "active_weeks_90",
+    "trx_30",
+    "trx_90",
+    "trx_per_active_day_90",
+    "log_amount_30",
+    "log_amount_90",
+    "trend_active_days",
+    "trend_trx",
+    "trend_amount",
+    "max_gap_90",
+    "past_gaps_30plus",
+    "past_gaps_90plus",
+    "n_type_buckets_90",
+    "share_type_1",
+    "share_type_46",
+    "share_type_40",
+    "share_type_49",
+    "share_type_11",
+    "share_type_56",
+    "share_type_41",
+    "share_type_50",
+    "share_type_18",
+    "share_type_48",
+    "share_type_other"
+  ],
+  "top_event_types": [
+    1,
+    46,
+    40,
+    49,
+    11,
+    56,
+    41,
+    50,
+    18,
+    48
+  ],
+  "domestic_currency": 11,
+  "hazard_params": {
+    "objective": "binary",
+    "learning_rate": 0.05,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "seed": 42,
+    "num_threads": 2,
+    "verbose": -1,
+    "num_leaves": 63,
+    "min_child_samples": 1000,
+    "feature_fraction": 0.6,
+    "lambda_l2": 5
+  },
+  "hazard_rounds": 200,
+  "refit_dates": [
+    "2021-04-01",
+    "2021-05-01",
+    "2021-06-01",
+    "2021-07-01",
+    "2021-08-01",
+    "2021-09-01",
+    "2021-10-01",
+    "2021-11-01",
+    "2021-12-01",
+    "2022-01-01",
+    "2022-02-01",
+    "2022-03-01",
+    "2022-04-01"
+  ],
+  "test_dates": [
+    "2022-07-01",
+    "2022-08-01",
+    "2022-09-01",
+    "2022-10-01"
+  ],
+  "test_metrics_90d": {
+    "Brier": {
+      "all": 0.037604719404486925,
+      "recently active": 0.02359713530051924
+    },
+    "PR-AUC": {
+      "all": 0.7360135199959393,
+      "recently active": 0.35985621173379273
+    },
+    "mean predicted": {
+      "all": 0.0762639672084794,
+      "recently active": 0.0280862027345867
+    },
+    "observed": {
+      "all": 0.08238199990014303,
+      "recently active": 0.0312079886246122
+    },
+    "recall@5%": {
+      "all": 0.48162797556664283,
+      "recently active": 0.5445467096451426
+    }
+  }
+}
