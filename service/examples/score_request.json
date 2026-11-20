@@ -1,0 +1,169 @@
+{
+ "client_id": "mbd-366",
+ "score_date": "2022-10-01",
+ "top_reasons": 4,
+ "transactions": [
+  {
+   "event_time": "2021-07-08T13:33:21.206686",
+   "amount": 2682282.0,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-07-27T09:26:08.653147",
+   "amount": 171771.5,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-08-21T11:44:10.528625",
+   "amount": 113746.66,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-09-05T09:17:30.712795",
+   "amount": 38279.55,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-10-06T02:54:10.680839",
+   "amount": 440901.34,
+   "currency": 11,
+   "event_type": 25
+  },
+  {
+   "event_time": "2021-10-09T01:25:24.258709",
+   "amount": 96946.16,
+   "currency": 11,
+   "event_type": 46
+  },
+  {
+   "event_time": "2021-10-15T15:01:56.766605",
+   "amount": 2821722.25,
+   "currency": 11,
+   "event_type": 25
+  },
+  {
+   "event_time": "2021-10-17T00:47:04.688499",
+   "amount": 3392075.25,
+   "currency": 11,
+   "event_type": 25
+  },
+  {
+   "event_time": "2021-10-24T01:46:44.529269",
+   "amount": 280656.22,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-11-03T11:18:00.052646",
+   "amount": 15327.62,
+   "currency": 11,
+   "event_type": 46
+  },
+  {
+   "event_time": "2021-11-07T00:39:46.937715",
+   "amount": 141361.91,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-11-10T11:44:58.862265",
+   "amount": 201928.39,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-11-21T14:15:16.203276",
+   "amount": 5933083.0,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-12-01T16:52:45.523725",
+   "amount": 40863.39,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-12-02T11:31:40.695261",
+   "amount": 59846.89,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-12-03T03:46:36.179773",
+   "amount": 14605.69,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-12-10T10:28:29.192505",
+   "amount": 23951.64,
+   "currency": 11,
+   "event_type": 46
+  },
+  {
+   "event_time": "2021-12-17T02:51:49.673792",
+   "amount": 59547.96,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-12-26T09:41:06.858653",
+   "amount": 92710.09,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2021-12-29T02:05:06.564848",
+   "amount": 43884.32,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2022-01-01T10:00:30.145785",
+   "amount": 29179.35,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2022-01-05T03:36:45.697719",
+   "amount": 38149.55,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2022-01-16T17:50:27.282885",
+   "amount": 130790.34,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2022-01-25T01:09:07.098057",
+   "amount": 2913464.0,
+   "currency": 11,
+   "event_type": 25
+  },
+  {
+   "event_time": "2022-01-31T00:10:01.595058",
+   "amount": 169997.09,
+   "currency": 11,
+   "event_type": 46
+  },
+  {
+   "event_time": "2022-05-21T01:15:47.726473",
+   "amount": 3656843.0,
+   "currency": 11,
+   "event_type": 1
+  },
+  {
+   "event_time": "2022-09-14T16:44:55.367631",
+   "amount": 180319.22,
+   "currency": 11,
+   "event_type": 25
+  }
+ ]
+}

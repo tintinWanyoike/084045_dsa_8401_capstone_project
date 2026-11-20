@@ -1,0 +1,7 @@
+# Runtime dependencies of the API only (the notebooks use ../requirements.txt)
+fastapi==0.124.4
+uvicorn[standard]==0.38.0
+pydantic==2.13.5
+lightgbm==4.7.0
+numpy==2.5.3
+scipy==1.18.1
