@@ -1,0 +1,39 @@
+feature,group,description
+quiet_days,recency,"Days since the last active day, not counting the scoring date"
+tenure_days,recency,Days since the client's first transaction
+activity_rate_lifetime,recency,Active days divided by tenure
+is_new_client,recency,Tenure shorter than 90 days
+active_days_7,level,Active days in the last 7 days
+active_days_30,level,Active days in the last 30 days
+active_days_90,level,Active days in the last 90 days
+active_weeks_90,level,Weeks with any activity in the last 90 days (of 13)
+trx_30,level,Transactions in the last 30 days
+trx_90,level,Transactions in the last 90 days
+trx_per_active_day_90,level,"Transactions per active day, last 90 days"
+log_amount_30,level,"log(1 + domestic amount), last 30 days"
+log_amount_90,level,"log(1 + domestic amount), last 90 days"
+trend_active_days,trend,log ratio: active days in last 30 days vs the monthly average of days 31-90
+trend_trx,trend,log ratio: transactions in last 30 days vs the monthly average of days 31-90
+trend_amount,trend,log ratio: domestic amount in last 30 days vs the monthly average of days 31-90
+max_gap_90,history,Longest completed quiet spell starting in the last 90 days
+past_gaps_30plus,history,Completed quiet spells of 30+ days before the scoring date
+past_gaps_90plus,history,Completed quiet spells of 90+ days before the scoring date (past dormancy)
+n_type_buckets_90,mix,Number of the 11 type buckets used in the last 90 days
+share_type_1,mix,Share of last-90-day transactions with event_type 1
+share_type_46,mix,Share of last-90-day transactions with event_type 46
+share_type_40,mix,Share of last-90-day transactions with event_type 40
+share_type_49,mix,Share of last-90-day transactions with event_type 49
+share_type_11,mix,Share of last-90-day transactions with event_type 11
+share_type_56,mix,Share of last-90-day transactions with event_type 56
+share_type_41,mix,Share of last-90-day transactions with event_type 41
+share_type_50,mix,Share of last-90-day transactions with event_type 50
+share_type_18,mix,Share of last-90-day transactions with event_type 18
+share_type_48,mix,Share of last-90-day transactions with event_type 48
+share_type_other,mix,Share of last-90-day transactions outside the top 10 types
+dialogs_90,add-on,Support dialogues in the last 90 days
+dialogs_total,add-on,Support dialogues before the scoring date
+days_since_dialog,add-on,Days since the last support dialogue (missing if none)
+geo_available,add-on,Scoring date has 90 days of geo history (from Mar 2022)
+geo_events_90,add-on,Geo events in the last 90 days (missing before Mar 2022)
+geo_days_90,add-on,Days with geo events in the last 90 days
+geo_cells_90,add-on,Distinct geohash-5 cells in the last 90 days
