@@ -1,0 +1,9 @@
+data/
+notebook.ipynb
+reports/
+.git/
+.venv/
+**/__pycache__/
+**/.pytest_cache/
+service/tests/
+*.zip
