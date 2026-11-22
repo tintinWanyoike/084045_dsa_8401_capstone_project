@@ -1,0 +1,6 @@
+trx_clean.parquet
+geo_clean.parquet
+dialog_clean.parquet
+panel.parquet
+clients.parquet
+daily_activity.parquet
