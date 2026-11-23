@@ -21,6 +21,10 @@ data/
   processed/                  modelling panel and feature dictionary (not committed)
 models/                       served model (lgbm_hazard.txt), comparison models, metadata.json,
                               monitoring_reference.json (drift bins, alert rules, risk tiers),
+<<<<<<< HEAD
+=======
+                              
+>>>>>>> 69411148bcd6fb0cafbed8e60e19bc048f07a881
 service/
   app/                        FastAPI service: features.py, model.py, schemas.py, main.py
   tests/                      parity tests (API = notebooks) and endpoint tests, with fixtures
