@@ -4,19 +4,17 @@ DSA 8401 Applied Machine Learning capstone. For each active client on a monthly 
 date, the model will predict the probability of becoming dormant (no transactions for N
 consecutive days) within the next 30, 60 and 90 days.
 
-Notebooks 01 to 06 build and evaluate the model; a FastAPI service in a Docker container
+One pipeline notebook builds and evaluates the model; a FastAPI service in a Docker container
 serves it, with reason codes for every score and a drift check for each scoring run.
 
 ## Repository layout
 
 ```
-notebooks/
-  01_data_collection.ipynb    download, extract and inventory MBD-mini
-  02_data_preparation.ipynb   cleaning: types, duplicates, missing values, time zone, distribution
-  03_eda.ipynb                exploration: activity, choosing the dormancy window, warning signals
-  04_labels_features.ipynb    modelling table: labels, point-in-time features, time-based split, audits
-  05_modelling.ipynb          rule baselines, Cox, LightGBM hazard and direct models; test evaluation
-  06_explainability_monitoring.ipynb  SHAP reason codes, Evidently and PSI drift, calibration, N = 60 check
+notebook.ipynb
+  the whole pipeline, Parts 1-6:
+                                1 data collection   2 cleaning   3 EDA and dormancy window
+                                4 labels, features, time split, audits   5 models and test evaluation
+                                6 SHAP, drift monitoring, calibration, N = 60 check
 data/
   raw/                        downloaded archives (not committed)
   interim/                    extracted tables and cleaned Parquet files (not committed)
@@ -31,7 +29,6 @@ service/
 Dockerfile, docker-compose.yml  container for the API
 .github/workflows/ci.yml      runs the tests and builds the image on every push
 reports/
-  eda/data_overview.md        running log of data findings
   test_results.csv            test metrics for every model, horizon and subset
   monitoring/                 Evidently drift report, PSI by date, calibration, N = 60 sensitivity
 run_pipeline.sh               runs every notebook top to bottom
@@ -53,33 +50,31 @@ pip install -r requirements.txt
 
 ## Running
 
-Interactively, open the notebooks in order:
+Interactively, top to bottom:
 
 ```bash
-jupyter lab
+jupyter lab notebook.ipynb
 ```
 
 Or reproduce everything from scratch, headless:
 
 ```bash
-bash run_pipeline.sh               # all notebooks in order
-bash run_pipeline.sh 02            # a single notebook
+bash run_pipeline.sh             
 ```
 
 Each notebook can also be run on its own with:
 
-```bash
-jupyter nbconvert --to notebook --execute --inplace notebooks/01_data_collection.ipynb
-jupyter nbconvert --to notebook --execute --inplace notebooks/02_data_preparation.ipynb
-jupyter nbconvert --to notebook --execute --inplace notebooks/03_eda.ipynb
-jupyter nbconvert --to notebook --execute --inplace notebooks/04_labels_features.ipynb
-jupyter nbconvert --to notebook --execute --inplace notebooks/05_modelling.ipynb
-jupyter nbconvert --to notebook --execute --inplace notebooks/06_explainability_monitoring.ipynb
-```
-
-| Notebook | Runtime | Produces |
+| Part | Runtime (2 CPUs) | Produces |
 |---|---|---|
-| 01 Data collection | ~1 min plus download | `data/raw/*.tar.gz`, `data/interim/extracted/` |
+| 1 Data collection | ~1 min plus download | `data/raw/*.tar.gz`, `data/interim/extracted/` |
+| 2 Data preparation | ~2 min | `data/interim/{trx,geo,dialog}_clean.parquet`, `clients.parquet` |
+| 3 EDA | ~1 min | charts and decisions only |
+| 4 Labels and features | ~1 min | `data/processed/panel.parquet`, `feature_dictionary.csv`, `data/interim/daily_activity.parquet` |
+| 5 Modelling | ~7 min | `models/*`, `reports/test_results.csv`, `reports/tuning_results.csv` |
+| 6 Explainability and monitoring | ~5 min | `models/monitoring_reference.json`, `models/feature_dictionary.csv`, `reports/monitoring/*` |
+
+Each part reloads what it needs from the files written by earlier parts, so after a full
+run any single part can be re-run on its own.ollection | ~1 min plus download | `data/raw/*.tar.gz`, `data/interim/extracted/` |
 | 02 Data preparation | ~2 min | `data/interim/{trx,geo,dialog}_clean.parquet`, `clients.parquet` |
 | 03 EDA | ~1 min | charts and decisions only (no files) |
 | 04 Labels and features | ~1 min | `data/processed/panel.parquet`, `feature_dictionary.csv`, `data/interim/daily_activity.parquet` |
