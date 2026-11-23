@@ -65,7 +65,7 @@
     "feature_fraction": 0.6,
     "lambda_l2": 5
   },
-  "hazard_rounds": 200,
+  "hazard_rounds": 218,
   "refit_dates": [
     "2021-04-01",
     "2021-05-01",
@@ -89,24 +89,24 @@
   ],
   "test_metrics_90d": {
     "Brier": {
-      "all": 0.037604719404486925,
-      "recently active": 0.02359713530051924
+      "all": 0.03759350362941787,
+      "recently active": 0.023596581572975863
     },
     "PR-AUC": {
-      "all": 0.7360135199959393,
-      "recently active": 0.35985621173379273
+      "all": 0.7360719821693542,
+      "recently active": 0.3597169164770666
     },
     "mean predicted": {
-      "all": 0.0762639672084794,
-      "recently active": 0.0280862027345867
+      "all": 0.07640244392385223,
+      "recently active": 0.028202167520464755
     },
     "observed": {
       "all": 0.08238199990014303,
       "recently active": 0.0312079886246122
     },
     "recall@5%": {
-      "all": 0.48162797556664283,
-      "recently active": 0.5445467096451426
+      "all": 0.4816581658613529,
+      "recently active": 0.5453708099424559
     }
   }
 }

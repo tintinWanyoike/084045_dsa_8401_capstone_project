@@ -21,7 +21,8 @@ RUN pip install --no-cache-dir -r service/requirements.txt
 # Only what serving needs: the API code and the model artefacts
 COPY service/__init__.py service/__init__.py
 COPY service/app service/app
-COPY models/lgbm_hazard.txt models/metadata.json models/monitoring_reference.json models/feature_dictionary.csv models/
+COPY models/lgbm_hazard.txt models/metadata.json models/monitoring_reference.json models/
+COPY feature_dictionary.csv ./
 
 # Run as a non-root user
 RUN useradd --create-home --uid 1000 api && chown -R api /app

@@ -21,7 +21,6 @@ data/
   processed/                  modelling panel and feature dictionary (not committed)
 models/                       served model (lgbm_hazard.txt), comparison models, metadata.json,
                               monitoring_reference.json (drift bins, alert rules, risk tiers),
-                              feature_dictionary.csv
 service/
   app/                        FastAPI service: features.py, model.py, schemas.py, main.py
   tests/                      parity tests (API = notebooks) and endpoint tests, with fixtures
@@ -33,6 +32,7 @@ reports/
   monitoring/                 Evidently drift report, PSI by date, calibration, N = 60 sensitivity
 run_pipeline.sh               runs every notebook top to bottom
 requirements.txt
+feature_dictionary.csv
 ```
 
 ## Setup

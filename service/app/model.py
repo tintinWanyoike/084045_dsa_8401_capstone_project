@@ -11,6 +11,13 @@ import numpy as np
 
 INTERVALS = (1, 2, 3)
 
+def _find_file(name: str, *folders: Path) -> Path:
+    """Return the first existing copy of `name` in the given folders."""
+    for folder in folders:
+        path = Path(folder) / name
+        if path.exists():
+            return path
+    raise FileNotFoundError(f"{name} not found in: {', '.join(str(f) for f in folders)}")
 
 class DormancyModel:
     def __init__(self, models_dir: str | Path):
@@ -18,7 +25,9 @@ class DormancyModel:
         self.booster = lgb.Booster(model_file=str(d / "lgbm_hazard.txt"))
         self.meta = json.loads((d / "metadata.json").read_text())
         self.monitoring = json.loads((d / "monitoring_reference.json").read_text())
-        with open(d / "feature_dictionary.csv", newline="") as fh:
+        # feature_dictionary.csv may live in models/ or in the project root (the parent of models/)
+        fd_path = _find_file("feature_dictionary.csv", d, d.parent)
+        with open(fd_path, newline="") as fh:
             self.descriptions = {r["feature"]: r["description"] for r in csv.DictReader(fh)}
         self.features: list[str] = self.meta["features"]
         self.top_types: list[int] = self.meta["top_event_types"]
